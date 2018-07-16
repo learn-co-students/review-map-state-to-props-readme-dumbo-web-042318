@@ -1,7 +1,8 @@
-export default function shoppingListItemReducer(state = {
+const initState = {
   items: [], 
   users: [ 'initial user' ]
-}, action) {
+}
+export default function shoppingListItemReducer(state = initState, action) {
 
   switch(action.type) {
 
@@ -14,6 +15,7 @@ export default function shoppingListItemReducer(state = {
       return Object.assign({}, state, {
         users: state.users.concat(state.users.length + 1)
       });
+
 
     default:
       return state;
